@@ -8,7 +8,9 @@ export default async function Home() {
     if (!url) {
       url = `https://${process.env.VERCEL_URL}/api/lists`;
     }
-    const data = await fetch(url);
+    const data = await fetch(url, {
+      cache: "no-cache",
+    });
     const receivedData = await data.json();
     formatData = receivedData.map((record: { date: string; name: string }) => {
       return {
