@@ -4,7 +4,14 @@ import { Box, Container } from "@radix-ui/themes";
 export default async function Home() {
   let formatData = [];
   try {
-    let url = process.env.HOST_URL ? `http://${process.env.HOST_URL}/api/lists` : null;
+    let url;
+    if (process.env.HOST_URL) {
+      if (process.env.HOST_URL.includes("localhost")) {
+        url = `http://${process.env.HOST_URL}/api/lists`;
+      } else {
+        url = `https://${process.env.HOST_URL}/api/lists`;
+      }
+    }
     if (!url) {
       url = `https://${process.env.VERCEL_URL}/api/lists`;
     }
