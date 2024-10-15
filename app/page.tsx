@@ -16,7 +16,7 @@ export default async function Home() {
         date: new Date(record.date),
       };
     });
-  } catch (e) {
+  } catch {
     return <div>Something went wrong</div>;
   }
   return (

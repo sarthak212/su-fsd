@@ -1,5 +1,5 @@
 "use client";
-import { Box, Card, Flex, Select, Text } from "@radix-ui/themes";
+import { Box, Flex, Select, Text } from "@radix-ui/themes";
 import { useEffect, useState } from "react";
 import handleSort from "../lib/sort";
 
