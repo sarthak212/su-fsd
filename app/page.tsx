@@ -26,7 +26,7 @@ export default async function Home() {
       };
     });
   } catch {
-    return <div>Something went wrong</div>;
+    return <div>Something went wrong with this domain: {process.env.HOST_URL}</div>;
   }
   return (
     <Container size={"2"} py={"9"}>
